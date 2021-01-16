@@ -19,5 +19,5 @@ final class Home{
 		require_once "./Views/src/header.php";
 		require_once "./Views/home/dashboard.php";
 		require_once "./Views/src/footer.php";
-	}
+	}	
 }

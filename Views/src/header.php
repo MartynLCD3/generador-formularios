@@ -24,3 +24,42 @@
 	</head>
 	<body>
 		<main>
+		<div id="header">
+			<v-app>
+				<v-card>
+    					<v-tabs
+						v-model="tab"
+      						background-color="success"
+					        dark
+   					>
+      						<v-tab>
+        						saludo
+						</v-tab>
+						<v-tab>
+							despedida
+						</v-tab>
+   					</v-tabs>
+    					<v-tabs-items v-model="tab">
+      						<v-tab-item>
+       							<v-card flat>
+          							<v-card-text>Hola</v-card-text>
+							</v-card>	
+						</v-tab-item>
+						<v-tab-item>
+							<v-card flat>
+								<v-card-text>chau</v-card-text>
+							</v-card>
+						</v-tab-item>
+    					</v-tabs-items>
+				</v-card>
+			</v-app>
+		</div>
+		<script>
+			new Vue({
+				el:"#header",
+				vuetify:new Vuetify(),
+    				data:{
+        				tab: null,
+				      }
+				})
+		</script>

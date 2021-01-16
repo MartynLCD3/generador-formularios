@@ -7,9 +7,7 @@ final class Login{
 	const LIMIT = 0;	
 
 	public function index(){	
-		if(isset($_SESSION["user_session"])){
-			\Controllers\Tools::_dashboard();
-		}
+		self::_session_control();	
 		self::_captured_credentials();
 		self::_views();
 	}
@@ -42,5 +40,11 @@ final class Login{
 				\Controllers\Tools::_dashboard();	
 			}
 		}
+	}
+
+	private static function _session_control(){
+		if(isset($_SESSION["user_session"])){
+			\Controllers\Tools::_dashboard();
+		}		
 	}
 }
