@@ -12,4 +12,8 @@ final class Tools{
 		$dashboard = new \Config\Helper();
 		$dashboard->home();
 	}
+
+	public static function _user_exist(){
+		require_once "./Views/error/user_exist.php";
+	}
 }

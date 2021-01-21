@@ -19,7 +19,7 @@ final class Login{
 	}
 
 	private static function _captured_credentials(){
-		if($_SERVER['REQUEST_METHOD'] === "POST" & isset($_POST["send"])){
+		if($_SERVER["REQUEST_METHOD"] === "POST" & isset($_POST["send"])){
 			
 			$email_credential = $_POST["email"];
 			$password_credential = $_POST["password"];
@@ -39,6 +39,32 @@ final class Login{
 				$generate->new_session($email,$password);
 				\Controllers\Tools::_dashboard();	
 			}
+		}
+
+		if($_SERVER["REQUEST_METHOD"] === "POST" & isset($_POST["send-register"])){
+
+			$username_credential = $_POST["username"];
+			$email_credential = $_POST["email"];
+			$password_credential = $_POST["password"];
+
+			if(
+				empty($username_credential) ||
+				empty($email_credential) ||
+			  	empty($password_credential) ||
+				strlen($password_credential) < self::LIMIT ||
+				strpos($email_credential,"@") === FALSE
+			){
+				\Controllers\Tools::_try_again();
+			}
+			else{
+				$username = trim($username_credential);
+				$email = trim($email_credential);
+				$password = password_hash($password_credential,PASSWORD_DEFAULT);
+				$generate = new \Models\Register();
+				$generate->new_user($username,$email,$password);
+						
+			}
+	
 		}
 	}
 

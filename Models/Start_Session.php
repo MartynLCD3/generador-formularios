@@ -5,6 +5,7 @@ namespace Models;
 final class Start_Session{
 
 	public function new_session($email,$password){
+		
 		$new_connection = new \Models\Connection();
 		$connection = $new_connection->run();
 		$query = "SELECT * FROM user_table WHERE email = :email LIMIT 1";
@@ -17,6 +18,7 @@ final class Start_Session{
 			if(password_verify($password,$result["password"])){	
 
 			$_SESSION["user_session"] = [
+				"user_name" => $result["username"],
 				"user_email" => $result["email"], 
 				"user_password" => $result["password"]
 				];	
