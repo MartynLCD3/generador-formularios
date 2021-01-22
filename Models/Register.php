@@ -21,5 +21,8 @@ final class Register{
 		}catch(\PDOException $e){
 			\Controllers\Tools::_user_exist();	
 		}
+
+		$new_connection = null;
+		$connection = null;
 	}
 }

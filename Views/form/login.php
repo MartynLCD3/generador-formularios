@@ -73,14 +73,14 @@
       							      	required
 							></v-text-field>
    							<v-text-field
-							      	v-model="email"
+							      	v-model="emailRegister"
      							      	:rules="emailRules"
 							     	label="E-mail"
 							      	name="email"
       							      	required
 							></v-text-field>
 							<v-text-field
-      								v-model="password"		
+      								v-model="passRegister"		
 							        :rules="passwordRules"
 								label="Contraseña"
 								type="password"
@@ -113,57 +113,4 @@
 		</v-footer>
 	</v-app>
 </div>
-<script>
-	new Vue({
-		el:"#app",
-		vuetify:new Vuetify(),
-    		data:{
-			tab: null,
-			formStyle:{
-				width:"50%",
-				margin:"7em auto"
-			},
-			back:{
-				backgroundImage:"url('../assets/img/background.jpg')",
-				backgroundPosition:"center center",
-				backgrounRepeat:"no-repeat",
-				backgroundAttachment:"fixed",
-				backgroundSize:"cover",
-				backgroundColor:"#004D40"
-			},
-			box:{
-				textAlign:"center",
-				marginTop:"1em"
-			},
-			footer:{
-				position:"fixed",
-				bottom:"0",
-				width:"100%",		
-			},	
-			cardText:{
-				margin:"auto",
-				backgroundColor:"inherit",
-			},	
-			valid: true,
-			username: '',
-			userRules: [
-				v => !!v || 'Ingresa un nombre de usuario',
-			],
-    			password: '',
-      			passwordRules: [
-        			v => !!v || 'Ingresa tu contraseña',
-        			v => (v && v.length >= 10) || 'Mínimo 10 caracteres!',
-			],
-			email: '',
-     			emailRules: [
-        			v => !!v || 'Ingresa tu email',
-        			v => /.+@.+\..+/.test(v) || 'Correo inválido',
-			],	
-		},
-		methods: {
-      			validate () {
-        			this.$refs.form.validate()
-      			},
-      		}
-	})
-</script>
+<script src="../assets/js/form.control.js"></script>

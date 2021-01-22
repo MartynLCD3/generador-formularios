@@ -17,5 +17,4 @@
       			</template>
     		</v-snackbar>
 </div>
-<script src="../assets/js/msg.reg.js"></script>
-
+<script src="../assets/js/msg.log.js"></script>

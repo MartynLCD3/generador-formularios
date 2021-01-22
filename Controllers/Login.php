@@ -36,8 +36,7 @@ final class Login{
 				$email = trim($email_credential);
 				$password = $password_credential;	
 				$generate = new \Models\Start_Session();
-				$generate->new_session($email,$password);
-				\Controllers\Tools::_dashboard();	
+				$generate->new_session($email,$password);	
 			}
 		}
 

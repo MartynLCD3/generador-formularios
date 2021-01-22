@@ -12,17 +12,30 @@ final class Start_Session{
 		$stmt = $connection->prepare($query);
 		$stmt->bindValue(":email",$email);
 		$stmt->execute();
+		$result = $stmt->fetch(\PDO::FETCH_ASSOC);
 
-		if($result = $stmt->fetch(\PDO::FETCH_ASSOC)){
-	
-			if(password_verify($password,$result["password"])){	
+		if(is_array($result) || is_object($result)){
 
-			$_SESSION["user_session"] = [
-				"user_name" => $result["username"],
-				"user_email" => $result["email"], 
-				"user_password" => $result["password"]
-				];	
-			}	
-		}
+				if(password_verify($password,$result["password"])){	
+					$_SESSION["user_session"] = [
+						"user_name" => $result["username"],
+						"user_email" => $result["email"], 
+						"user_password" => $result["password"]
+					];	
+					
+					\Controllers\Tools::_dashboard();
+					return true;
+				}else{
+					\Controllers\Tools::_user_log_error();
+					return false;
+				}
+		}else{
+		
+			\Controllers\Tools::_user_log_error();
+			return false;
+		}	
+
+		$new_connection = null;
+		$connection = null;
 	}
 }
