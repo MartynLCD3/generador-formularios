@@ -3,7 +3,7 @@
 		<v-card>
     			<v-tabs
 				v-model="tab"
-      				background-color="success"
+      				background-color="#009688"
 			        dark
    			>
       				<v-tab>
@@ -74,14 +74,14 @@
 							></v-text-field>
    							<v-text-field
 							      	v-model="emailRegister"
-     							      	:rules="emailRules"
+     							      	:rules="emailRegisterRules"
 							     	label="E-mail"
 							      	name="email"
       							      	required
 							></v-text-field>
 							<v-text-field
       								v-model="passRegister"		
-							        :rules="passwordRules"
+							        :rules="passwordRegisterRules"
 								label="Contraseña"
 								type="password"
 								name="password"
@@ -104,7 +104,7 @@
 				</v-tab-item>
 			</v-tabs-items>
 		</v-card>
-		<v-footer :style="footer" dark class="success">
+		<v-footer :style="footer" dark class="#009688">
 			<v-card :style="cardText">
 				<v-card-text>
 					<strong>Generador de Formularios - Martyn Castagno</strong>

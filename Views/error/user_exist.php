@@ -8,7 +8,8 @@
       			<template v-slot:action="{ attrs }">
         			<v-btn
           				dark
-          				text
+					text
+					:style="btn"
           				v-bind="attrs"
           				@click="snackbar = false"
         			>

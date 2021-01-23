@@ -22,11 +22,12 @@ new Vue({
 		footer:{
 			position:"fixed",
 			bottom:"0",
-			width:"100%",		
+			width:"100%",
+			backgroundColor:"#009688",
 		},	
 		cardText:{
 			margin:"auto",
-			backgroundColor:"inherit",
+			backgroundColor:"#004D40",
 		},	
 		valid: true,
 		username: '',
@@ -44,7 +45,15 @@ new Vue({
         		v => /.+@.+\..+/.test(v) || 'Correo inválido',
 		],
 		emailRegister: '',
-		passRegister: '',	
+		passRegister: '',
+		passwordRegisterRules: [
+        		v => !!v || 'Ingresa tu contraseña',
+        		v => (v && v.length >= 10) || 'Mínimo 10 caracteres!',
+		],
+     		emailRegisterRules: [
+        		v => !!v || 'Ingresa tu email',
+        		v => /.+@.+\..+/.test(v) || 'Correo inválido',
+		],	
 	},
 	methods: {
       		validate () {
