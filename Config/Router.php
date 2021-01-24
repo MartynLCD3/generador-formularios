@@ -40,7 +40,7 @@ final class Router{
 		self::router(); 
 		
 		$home = "/";
-		$sign_in = "/login";
+		$sign_in = "/v1/login";
 		
 		route($home,function(){
 			$location = new \Controllers\Home();

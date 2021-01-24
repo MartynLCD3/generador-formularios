@@ -8,7 +8,9 @@ final class Login{
 
 	public function index(){	
 		self::_session_control();	
-		self::_captured_credentials();
+		self::_captured_credentials_login();
+		self::_captured_credentials_register();
+		self::_captured_credentials_recover();
 		self::_views();
 	}
 
@@ -18,7 +20,7 @@ final class Login{
 		require_once "./Views/src/footer.php";
 	}
 
-	private static function _captured_credentials(){
+	private static function _captured_credentials_login(){
 		if($_SERVER["REQUEST_METHOD"] === "POST" & isset($_POST["send"])){
 			
 			$email_credential = $_POST["email"];
@@ -39,7 +41,9 @@ final class Login{
 				$generate->new_session($email,$password);	
 			}
 		}
+	}
 
+	private static function _captured_credentials_register(){
 		if($_SERVER["REQUEST_METHOD"] === "POST" & isset($_POST["send-register"])){
 
 			$username_credential = $_POST["username"];
@@ -61,9 +65,30 @@ final class Login{
 				$password = password_hash($password_credential,PASSWORD_DEFAULT);
 				$generate = new \Models\Register();
 				$generate->new_user($username,$email,$password);
-						
 			}
-	
+		}
+	}
+
+	private static function _captured_credentials_recover(){
+		if($_SERVER["REQUEST_METHOD"] === "POST" & isset($_POST["send-recover"])){
+			
+			$email_credential = $_POST["email"];
+
+			if(
+				empty($email_credential) ||
+				strpos($email_credential,"@") === FALSE
+			){
+			
+				\Controllers\Tools::_try_again();
+			}else{
+				$email = trim($email_credential);
+				$title = "Correo de recuperación";
+				$message = "Por favor haz click en el siguiente enlace: ";
+				$headers = "From: Generador de Formularios" . "\r\n" .
+    					   "X-Mailer: PHP/" . phpversion();
+
+				mail($email, $title, $message, $headers);
+			}
 		}
 	}
 

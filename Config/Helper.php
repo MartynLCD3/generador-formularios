@@ -7,7 +7,7 @@ final class Helper{
 	const HOST = "http://localhost:8000/";
 
 	public function login(){
-		$helper = self::HOST . "login";
+		$helper = self::HOST . "v1/login";
 		header("location:$helper");
 	}
 
@@ -15,5 +15,4 @@ final class Helper{
 		$helper = self::HOST;
 		header("location:$helper");
 	}
-
 }

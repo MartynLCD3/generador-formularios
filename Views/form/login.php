@@ -7,11 +7,14 @@
 			        dark
    			>
       				<v-tab>
-        				Ingresar
+        				ingresar
 				</v-tab>
 				<v-tab>
-					Registrarse
+					registrarse
 				</v-tab>
+				<v-tab>
+					recuperar
+				</v-tab>	
    			</v-tabs>
 			<v-tabs-items dark v-model="tab">
 				<v-tab-item>
@@ -38,7 +41,7 @@
 								type="password"
 								name="password"
 							        required
-							></v-text-field>
+							></v-text-field>	
 							<div :style="box">
   								<v-btn
       									:disabled="!valid"
@@ -50,14 +53,14 @@
     								>
       									Acceder
 	   	 						</v-btn>	
-							</div>
+							</div>	
 						  </v-form>					
 					</v-card>	
 				</v-tab-item>
 				<v-tab-item>
 					<v-card flat>
 						<v-form
-							ref="form"
+							ref="formRegister"
 							v-model="valid"
 							lazy-validation
 							autocomplete="off"	
@@ -93,13 +96,45 @@
       									color="success"
 									class="mr-4"
 									name="send-register"
-									@click="validate"
+									@click="validateRegister"
 									type="submit"
     								>
       									Registrarse
 	   	 						</v-btn>	
 							</div>
 						  </v-form>		
+					</v-card>
+				</v-tab-item>
+				<v-tab-item>
+					<v-card flat>
+						<v-form
+							ref="formRecover"
+							v-model="valid"
+							lazy-validation
+							autocomplete="off"	
+							:style="formStyle"
+							method="post"
+  						>	
+   							<v-text-field
+							      	v-model="emailRecover"
+     							      	:rules="emailRules"
+							     	label="E-mail"
+							      	name="email"
+      							      	required
+							></v-text-field>
+							<div :style="box">
+  								<v-btn
+      									:disabled="!valid"
+      									color="success"
+									class="mr-4"
+									name="send-recover"
+									@click="validateRecover"
+									type="submit"
+    								>
+      									Recuperar contraseña
+	   	 						</v-btn>	
+							</div>
+						</v-form>
 					</v-card>
 				</v-tab-item>
 			</v-tabs-items>

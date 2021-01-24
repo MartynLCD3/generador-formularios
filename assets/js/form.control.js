@@ -7,6 +7,14 @@ new Vue({
 			width:"50%",
 			margin:"7em auto"
 		},
+		link:{
+			display:"block",
+			textAlign:"center",
+			color:"#fff",
+			outline:"none",
+			cursor:"pointer",
+		
+		},
 		back:{
 			backgroundImage:"url('../assets/img/background.jpg')",
 			backgroundPosition:"center center",
@@ -46,6 +54,7 @@ new Vue({
 		],
 		emailRegister: '',
 		passRegister: '',
+		emailRecover:'',
 		passwordRegisterRules: [
         		v => !!v || 'Ingresa tu contraseña',
         		v => (v && v.length >= 10) || 'Mínimo 10 caracteres!',
@@ -59,5 +68,11 @@ new Vue({
       		validate () {
         		this.$refs.form.validate()
       		},
+		validateRegister () {
+			this.$refs.formRegister.validate()
+		},
+		validateRecover () {
+			this.$refs.formRecover.validate()	
+		},
       	}
 })
