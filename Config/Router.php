@@ -2,17 +2,7 @@
 
 namespace Config;
 
-	# If you wanna add more routes,
-	# remember modify the next directories
-	# and files:
-
-	#
-
-	### <--- ---> ###
-
 final class Router{
-
-	CONST VERSION = "v1";
 
 	public static function run(){
 		self::router_links();

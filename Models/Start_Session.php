@@ -23,8 +23,7 @@ final class Start_Session{
 						"user_password" => $result["password"]
 					];	
 					
-					\Controllers\Tools::_dashboard();
-					return true;
+					header("location:http://localhost:8000/");	
 				}else{
 					\Controllers\Tools::_user_log_error();
 					return false;

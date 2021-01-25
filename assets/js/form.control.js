@@ -16,7 +16,7 @@ new Vue({
 		
 		},
 		back:{
-			backgroundImage:"url('../assets/img/background.jpg')",
+			backgroundImage:"url('../assets/img/background.png')",
 			backgroundPosition:"center center",
 			backgrounRepeat:"no-repeat",
 			backgroundAttachment:"fixed",
