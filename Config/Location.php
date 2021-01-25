@@ -14,6 +14,6 @@ if($location === $_SERVER['HTTP_HOST'] . "/"){
 	$title_html = "Home";
 }
 
-if($location === $_SERVER['HTTP_HOST'] . "/login"){
+if($location === $_SERVER['HTTP_HOST'] . "/v1/login"){
 	$title_html = "Sign In";
 }
