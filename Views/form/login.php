@@ -122,6 +122,15 @@
 							      	name="email"
       							      	required
 							></v-text-field>
+							<v-text-field 
+								v-model="passRecover"		
+							        :rules="passwordRecoverRules"
+								label="Contraseña"
+								type="password"
+								name="password"
+								required
+							>
+							</v-text-field>
 							<div :style="box">
   								<v-btn
       									:disabled="!valid"

@@ -73,21 +73,21 @@ final class Login{
 		if($_SERVER["REQUEST_METHOD"] === "POST" & isset($_POST["send-recover"])){
 			
 			$email_credential = $_POST["email"];
+			$new_password = $_POST["password"];
 
 			if(
 				empty($email_credential) ||
+			  	empty($new_password) ||
+				strlen($new_password) < self::LIMIT ||
 				strpos($email_credential,"@") === FALSE
 			){
-			
 				\Controllers\Tools::_try_again();
-			}else{
+			}
+			else{	
+				$password = password_hash($new_password,PASSWORD_DEFAULT);
 				$email = trim($email_credential);
-				$title = "Correo de recuperación";
-				$message = "Por favor haz click en el siguiente enlace: ";
-				$headers = "From: Generador de Formularios" . "\r\n" .
-    					   "X-Mailer: PHP/" . phpversion();
-
-				mail($email, $title, $message, $headers);
+				$generate = new \Models\Modify();
+				$generate->change_password($email,$password);	
 			}
 		}
 	}

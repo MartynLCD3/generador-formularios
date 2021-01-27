@@ -17,6 +17,8 @@ final class Register{
 			$stmt->bindValue(":email",$email);
 			$stmt->bindValue(":password",$password);
 			$stmt->execute();
+
+			\Controllers\Tools::_new_user_created();
 		
 		}catch(\PDOException $e){
 			\Controllers\Tools::_user_exist();	

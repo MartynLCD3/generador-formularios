@@ -3,6 +3,14 @@ new Vue({
 	vuetify:new Vuetify(),
 	data:{
 		tab: null,
+		valid: true,
+		emailRegister: '',
+		passRegister: '',
+		emailRecover:'',
+		passRecover: '',
+		username: '',
+		email: '',
+		password: '',
 		formStyle:{
 			width:"50%",
 			margin:"7em auto"
@@ -13,7 +21,6 @@ new Vue({
 			color:"#fff",
 			outline:"none",
 			cursor:"pointer",
-		
 		},
 		back:{
 			backgroundImage:"url('../assets/img/background.png')",
@@ -36,32 +43,33 @@ new Vue({
 		cardText:{
 			margin:"auto",
 			backgroundColor:"#004D40",
-		},	
-		valid: true,
-		username: '',
+		},			
 		userRules: [
-			v => !!v || 'Ingresa un nombre de usuario',
+			v => !!v || 'Ingresa un nombre de usuario.',
 		],
-    		password: '',
       		passwordRules: [
-        		v => !!v || 'Ingresa tu contraseña',
-        		v => (v && v.length >= 10) || 'Mínimo 10 caracteres!',
+        		v => !!v || 'Ingresa tu contraseña.',
+        		v => (v && v.length >= 10) || 'Mínimo 10 caracteres.',
 		],
-		email: '',
      		emailRules: [
-        		v => !!v || 'Ingresa tu email',
-        		v => /.+@.+\..+/.test(v) || 'Correo inválido',
+        		v => !!v || 'Ingresa tu email.',
+        		v => /.+@.+\..+/.test(v) || 'Correo inválido.',
 		],
-		emailRegister: '',
-		passRegister: '',
-		emailRecover:'',
+		emailRecoverRules: [
+			v => !!v || 'Ingresa tu email.',
+        		v => /.+@.+\..+/.test(v) || 'Correo inválido.',
+		],
+		passwordRecoverRules: [
+			v => !!v || 'Ingresa tu nueva contraseña.',
+			v => (v && v.length >= 10) || 'Mínimo 10 caracters.',
+		],
 		passwordRegisterRules: [
         		v => !!v || 'Ingresa tu contraseña',
-        		v => (v && v.length >= 10) || 'Mínimo 10 caracteres!',
+        		v => (v && v.length >= 10) || 'Mínimo 10 caracteres.',
 		],
      		emailRegisterRules: [
         		v => !!v || 'Ingresa tu email',
-        		v => /.+@.+\..+/.test(v) || 'Correo inválido',
+        		v => /.+@.+\..+/.test(v) || 'Correo inválido.',
 		],	
 	},
 	methods: {

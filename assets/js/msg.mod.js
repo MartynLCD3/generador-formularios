@@ -3,11 +3,11 @@ new Vue({
 	vuetify: new Vuetify(),
 	data:{
 		btn:{
-			backgroundColor:"#E53935",
+			backgroundColor:"#4CAF50",
 			marginRight:"1em",
 		},
 		snackbar: true,
-	        text: 'No se ha podido generar el registro. Intente nuevamente.',
+	        text: 'Contraseña cambiada con éxito.',
 		vertical: true,
 	},
 })

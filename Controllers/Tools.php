@@ -22,4 +22,14 @@ final class Tools{
 		require_once "./Views/src/header.php";
 		require_once "./Views/error/user_log_error.php";
 	}
+
+	public static function _password_changed(){
+		require_once "./Views/src/header.php";
+		require_once "./Views/success/password_changed.php";
+	}
+
+	public static function _new_user_created(){
+		require_once "./Views/src/header.php";
+		require_once "./Views/success/new_user_created.php";
+	}
 }
