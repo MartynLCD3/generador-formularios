@@ -7,7 +7,8 @@ new Vue({
 			backgroundColor:"#E53935",
 			marginRight:"1em",	
 		},
-	        text: 'Credenciales incorrectas. Intente nuevamente.',
+	        text: 'No se ha podido modificar su contraseña. Intente nuevamente.',
 		vertical: true,
 	},
 })
+

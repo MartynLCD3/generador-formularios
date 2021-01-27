@@ -19,9 +19,11 @@ final class Register{
 			$stmt->execute();
 
 			\Controllers\Tools::_new_user_created();
+			return true;
 		
 		}catch(\PDOException $e){
 			\Controllers\Tools::_user_exist();	
+			return false;
 		}
 
 		$new_connection = null;

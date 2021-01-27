@@ -28,6 +28,11 @@ final class Tools{
 		require_once "./Views/success/password_changed.php";
 	}
 
+	public static function _password_not_changed(){
+		require_once "./Views/src/header.php";
+		require_once "./Views/error/password_not_changed.php";
+	}
+
 	public static function _new_user_created(){
 		require_once "./Views/src/header.php";
 		require_once "./Views/success/new_user_created.php";
