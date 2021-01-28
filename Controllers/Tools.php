@@ -14,27 +14,27 @@ final class Tools{
 	}
 
 	public static function _user_exist(){
-		require_once "./Views/src/header.php";
-		require_once "./Views/error/user_exist.php";
+		require_once "./Views/src/header.html";
+		require_once "./Views/error/user_exist.html";
 	}
 
 	public static function _user_log_error(){
 		require_once "./Views/src/header.php";
-		require_once "./Views/error/user_log_error.php";
+		require_once "./Views/error/user_log_error.html";
 	}
 
 	public static function _password_changed(){
 		require_once "./Views/src/header.php";
-		require_once "./Views/success/password_changed.php";
+		require_once "./Views/success/password_changed.html";
 	}
 
 	public static function _password_not_changed(){
 		require_once "./Views/src/header.php";
-		require_once "./Views/error/password_not_changed.php";
+		require_once "./Views/error/password_not_changed.html";
 	}
 
 	public static function _new_user_created(){
 		require_once "./Views/src/header.php";
-		require_once "./Views/success/new_user_created.php";
+		require_once "./Views/success/new_user_created.html";
 	}
 }

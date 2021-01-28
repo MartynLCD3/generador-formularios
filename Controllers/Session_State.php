@@ -16,11 +16,4 @@ final class Session_State{
 			fclose($fp);
 		}
 	}
-
-	public function destroy_this_session(){
-		session_start();
-		session_unset();
-		session_destroy();
-		unlink("session.json");
-	}
 }

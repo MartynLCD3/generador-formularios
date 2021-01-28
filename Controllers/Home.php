@@ -17,9 +17,9 @@ final class Home{
 	}
 
 	private static function _views(){
-		require_once "./Views/src/header.php";	
-		require_once "./Views/home/dashboard.php";
-		require_once "./Views/src/footer.php";
+		require_once "./Views/src/header.html";	
+		require_once "./Views/home/dashboard.html";
+		require_once "./Views/src/footer.html";
 	}
 
 	private static function _captured_questions(){
