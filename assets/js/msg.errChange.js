@@ -11,4 +11,3 @@ new Vue({
 		vertical: true,
 	},
 })
-

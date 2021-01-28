@@ -9,7 +9,11 @@ final class Session_State{
 			$helper = new \Config\Helper();
 			$helper->login();		
 		}else{
-			echo json_encode($_SESSION["user_session"]);
+			$format = $_SESSION["user_session"];
+			$session = "[" . json_encode($format,JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT) . "]";
+			$fp = fopen("session.json","w");
+			fwrite($fp,$session);
+			fclose($fp);
 		}
 	}
 
@@ -17,5 +21,6 @@ final class Session_State{
 		session_start();
 		session_unset();
 		session_destroy();
+		unlink("session.json");
 	}
 }

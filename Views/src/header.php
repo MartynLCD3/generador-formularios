@@ -21,7 +21,7 @@
 		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
-		<title>Generador de Encuestas - <?php echo $title_html ?></title>
+		<title>Generador de Formularios - <?php echo $title_html ?></title>
 	</head>
 	<body>
 		<main>	
