@@ -11,7 +11,7 @@ final class Session_State{
 		}else{
 			$format = $_SESSION["user_session"];
 			$session = "[" . json_encode($format,JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT) . "]";
-			$fp = fopen("session.json","w");
+			$fp = fopen("json/session.json","w");
 			fwrite($fp,$session);
 			fclose($fp);
 		}

@@ -33,7 +33,7 @@
 				v-model="firstQuestion"
 				:rules="questionRules"
 				:counter="60"
-				label="Pregunta N°1"
+				label="Pregunta N°1*"
 				placeholder="¿Cómo se llama el satélite natural de la Tierra?"	
 				required
 				autofocus
@@ -47,10 +47,11 @@
         					>
           						<v-text-field
 								:counter="30"
-								label="Respuesta A"
+								:rules="answerRules"
+								label="Respuesta A*"
 								placeholder="Mercurio"
 								required
-								name="question-one-a"
+								name="answer-one-a"
           						></v-text-field>
         					</v-col>
         					<v-col
@@ -59,10 +60,11 @@
         					>
           						<v-text-field
 							        :counter="30"
-								label="Respuesta B"
+								:rules="answerRules"
+								label="Respuesta B*"
 								placeholder="Luna"
 								required
-								name="question-one-b"
+								name="answer-one-b"
 						        ></v-text-field>
         					</v-col>
 						        <v-col
@@ -71,10 +73,11 @@
 					        >
 							<v-text-field
 								:counter="30"
+								:rules="allRules"
 								label="Respuesta C"
 								placeholder="Marte"
 								required
-								name="question-one-c"
+								name="answer-one-c"
           						></v-text-field>
         					</v-col>
       					</v-row>
@@ -87,6 +90,7 @@
    			></v-progress-linear>
 			<v-text-field
 	      			:counter="60"
+				:rules="limitRules"
 				label="Pregunta N°2"
 				placeholder="¿Cuál es el idioma de tú país natal?"	
 				required
@@ -100,10 +104,11 @@
         				>
           					<v-text-field
             						:counter="30"
+							:rules="allRules"
             						label="Respuesta A"
 							required
 							placeholder="Español"
-							name="question-two-a"
+							name="answer-two-a"
           						></v-text-field>
         					</v-col>
         					<v-col
@@ -112,10 +117,11 @@
         					>
           					<v-text-field
 						        :counter="30"
+							:rules="allRules"
 						        label="Respuesta B"
 							required
 							placeholder="English"
-							name="question-two-b"
+							name="answer-two-b"
 					        ></v-text-field>
         				</v-col>
 				        <v-col
@@ -124,10 +130,11 @@
 				        >
 						<v-text-field
 							:counter="30"
+							:rules="allRules"
                    					label="Respuesta C"
 							required
 							placeholder="中文"
-							name="question-two-c"
+							name="answer-two-c"
           					></v-text-field>
         				</v-col>
       				</v-row>
@@ -140,6 +147,7 @@
    			></v-progress-linear>
 			<v-text-field
 	      			:counter="60"
+				:rules="limitRules"
 				label="Pregunta N°3"	
 				required
 				name="question-three"
@@ -152,9 +160,10 @@
         				>
           					<v-text-field
             						:counter="30"
+							:rules="allRules"
             						label="Respuesta A"
 							required
-							name="question-three-a"
+							name="answer-three-a"
           					></v-text-field>
         				</v-col>
         				<v-col
@@ -163,9 +172,10 @@
         				>
           					<v-text-field
 						        :counter="30"
+							:rules="allRules"
 						        label="Respuesta B"
 							required
-							name="question-three-b"
+							name="answer-three-b"
 					        ></v-text-field>
         				</v-col>
 				        <v-col
@@ -174,9 +184,10 @@
 				        >
 						<v-text-field
 							:counter="30"
+							:rules="allRules"
                    					label="Respuesta C"
 							required
-							name="question-three-c"
+							name="answer-three-c"
           					></v-text-field>
         				</v-col>
       				</v-row>
@@ -189,6 +200,7 @@
    			></v-progress-linear>
 			<v-text-field
 	      			:counter="60"
+				:rules="limitRules"
 				label="Pregunta N°4"	
 				required
 				name="question-four"
@@ -201,9 +213,10 @@
         				>
           					<v-text-field
             						:counter="30"
+							:rules="allRules"
             						label="Respuesta A"
 							required
-							name="question-four-a"
+							name="answer-four-a"
           					></v-text-field>
         				</v-col>
         				<v-col
@@ -212,9 +225,10 @@
         				>
           					<v-text-field
 						        :counter="30"
+							:rules="allRules"
 						        label="Respuesta B"
 							required
-							name="question-four-b"
+							name="answer-four-b"
 					        ></v-text-field>
         				</v-col>
 				        <v-col
@@ -223,9 +237,10 @@
 				        >
 						<v-text-field
 							:counter="30"
+							:rules="allRules"
                    					label="Respuesta C"
 							required
-							name="question-four-c"
+							name="answer-four-c"
           					></v-text-field>
         				</v-col>
       				</v-row>
@@ -238,6 +253,7 @@
    			></v-progress-linear>
 			<v-text-field
 	      			:counter="60"
+				:rules="limitRules"
 				label="Pregunta N°5"	
 				required
 				name="question-five"
@@ -250,9 +266,10 @@
         				>
           					<v-text-field
             						:counter="30"
+							:rules="allRules"
             						label="Respuesta A"
 							required
-							name="question-five-a"
+							name="answer-five-a"
           					></v-text-field>
         				</v-col>
         				<v-col
@@ -261,9 +278,10 @@
         				>
           					<v-text-field
 						        :counter="30"
+							:rules="allRules"
 						        label="Respuesta B"
 							required
-							name="question-five-b"
+							name="answer-five-b"
 					        ></v-text-field>
         				</v-col>
 				        <v-col
@@ -272,9 +290,10 @@
 				        >
 						<v-text-field
 							:counter="30"
+							:rules="allRules"
                    					label="Respuesta C"
 							required
-							name="question-five-c"
+							name="answer-five-c"
           					></v-text-field>
         				</v-col>
       				</v-row>
@@ -287,6 +306,7 @@
    			></v-progress-linear>
 			<v-text-field
 	      			:counter="60"
+				:rules="limitRules"
 				label="Pregunta N°6"	
 				required
 				name="question-six"
@@ -299,9 +319,10 @@
         				>
           					<v-text-field
             						:counter="30"
+							:rules="allRules"
             						label="Respuesta A"
 							required
-							name="question-six-a"
+							name="answer-six-a"
           					></v-text-field>
         				</v-col>
         				<v-col
@@ -310,9 +331,10 @@
         				>
           					<v-text-field
 						        :counter="30"
+							:rules="allRules"
 						        label="Respuesta B"
 							required
-							name="question-six-b"
+							name="answer-six-b"
 					        ></v-text-field>
         				</v-col>
 				        <v-col
@@ -321,9 +343,10 @@
 				        >
 						<v-text-field
 							:counter="30"
+							:rules="allRules"
                    					label="Respuesta C"
 							required
-							name="question-six-c"
+							name="answer-six-c"
           					></v-text-field>
         				</v-col>
       				</v-row>
@@ -336,6 +359,7 @@
    			></v-progress-linear>
 			<v-text-field
 	      			:counter="60"
+				:rules="limitRules"
 				label="Pregunta N°7"	
 				required
 				name="question-seven"
@@ -348,9 +372,10 @@
         				>
           					<v-text-field
             						:counter="30"
+							:rules="allRules"
             						label="Respuesta A"
 							required
-							name="question-seven-a"
+							name="answer-seven-a"
           					></v-text-field>
         				</v-col>
         				<v-col
@@ -361,7 +386,7 @@
 						        :counter="30"
 						        label="Respuesta B"
 							required
-							name="question-seven-b"
+							name="answer-seven-b"
 					        ></v-text-field>
         				</v-col>
 				        <v-col
@@ -370,9 +395,10 @@
 				        >
 						<v-text-field
 							:counter="30"
+							:rules="allRules"
                    					label="Respuesta C"
 							required
-							name="question-seven-c"
+							name="answer-seven-c"
           					></v-text-field>
         				</v-col>
       				</v-row>
@@ -385,6 +411,7 @@
    			></v-progress-linear>
 			<v-text-field
 	      			:counter="60"
+				:rules="limitRules"
 				label="Pregunta N°8"	
 				required
 				name="question-eight"
@@ -397,9 +424,10 @@
         				>
           					<v-text-field
             						:counter="30"
+							:rules="allRules"
             						label="Respuesta A"
 							required
-							name="question-eight-a"
+							name="answer-eight-a"
           					></v-text-field>
         				</v-col>
         				<v-col
@@ -408,9 +436,10 @@
         				>
           					<v-text-field
 						        :counter="30"
+							:rules="allRules"
 						        label="Respuesta B"
 							required
-							name="question-eight-b"
+							name="answer-eight-b"
 					        ></v-text-field>
         				</v-col>
 				        <v-col
@@ -419,9 +448,10 @@
 				        >
 						<v-text-field
 							:counter="30"
+							:rules="allRules"
                    					label="Respuesta C"
 							required
-							name="question-eight-c"
+							name="answer-eight-c"
           					></v-text-field>
         				</v-col>
       				</v-row>
@@ -434,6 +464,7 @@
    			></v-progress-linear>
 			<v-text-field
 	      			:counter="60"
+				:rules="limitRules"
 				label="Pregunta N°9"	
 				required
 				name="question-nine"
@@ -446,9 +477,10 @@
         				>
           					<v-text-field
             						:counter="30"
+							:rules="allRules"
             						label="Respuesta A"
 							required
-							name="question-nine-a"
+							name="answer-nine-a"
           					></v-text-field>
         				</v-col>
         				<v-col
@@ -457,9 +489,10 @@
         				>
           					<v-text-field
 						        :counter="30"
+							:rules="allRules"
 						        label="Respuesta B"
 							required
-							name="question-nine-b"
+							name="answer-nine-b"
 					        ></v-text-field>
         				</v-col>
 				        <v-col
@@ -468,9 +501,10 @@
 				        >
 						<v-text-field
 							:counter="30"
+							:rules="allRules"
                    					label="Respuesta C"
 							required
-							name="question-nine-c"
+							name="answer-nine-c"
           					></v-text-field>
         				</v-col>
       				</v-row>
@@ -483,6 +517,7 @@
    			></v-progress-linear>
 			<v-text-field
 	      			:counter="60"
+				:rules="limitRules"
 				label="Pregunta N°10"	
 				required
 				name="question-ten"
@@ -495,9 +530,10 @@
         				>
           					<v-text-field
             						:counter="30"
+							:rules="allRules"
             						label="Respuesta A"
 							required
-							name="question-ten-a"
+							name="answer-ten-a"
           					></v-text-field>
         				</v-col>
         				<v-col
@@ -506,9 +542,10 @@
         				>
           					<v-text-field
 						        :counter="30"
+							:rules="allRules"
 						        label="Respuesta B"
 							required
-							name="question-ten-b"
+							name="answer-ten-b"
 					        ></v-text-field>
         				</v-col>
 				        <v-col
@@ -517,9 +554,10 @@
 				        >
 						<v-text-field
 							:counter="30"
+							:rules="allRules"
                    					label="Respuesta C"
 							required
-							name="question-ten-c"
+							name="answer-ten-c"
           					></v-text-field>
         				</v-col>
       				</v-row>
@@ -550,50 +588,4 @@
 		</v-form>
 	</v-app>	
 </div>
-
-<script>
-new Vue({
-	el:"#app",
-	vuetify: new Vuetify(),
-	data:{
-		valid:true,
-		title:'Nuevo Formulario',
-		firstQuestion:'',
-		background:{
-			backgroundImage:"url('https://cdn.vuetifyjs.com/images/parallax/material2.jpg')",
-			backgroundPosition:"center center",
-			backgrounRepeat:"no-repeat",
-			backgroundAttachment:"fixed",
-			backgroundSize:"cover",
-			backgroundColor:"#004D40",
-		},
-		form:{
-			margin:"10em auto 4em",
-			width:"90%",
-			padding:"3em",
-			backgroundColor:"rgba(255,255,255,.6)",
-			borderRadius:"2em",
-			textAlign:"center",	
-		},
-		linear:{
-			margin:"2em auto",
-		},
-		questionRules: [
-			v => !!v || 'Formula mínimo 1 pregunta.',
-		        v => (v && v.length <= 60) || 'Superaste el límite',
-		],
-	},
-	methods:{
-		logOut() {
-			const url = "http://localhost:8000/"
-			window.location.href = url + "Controllers/Logout.php"	
-		},
-		validate() {
-        		this.$refs.form.validate()
-      		},
-		reset() {
-        		this.$refs.form.reset()
-      		},	
-	}
-})
-</script>
+<script src="../assets/js/form.control.js"></script>

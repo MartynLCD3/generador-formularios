@@ -8,10 +8,7 @@ final class Logout{
 		session_start();
 		session_unset();
 		session_destroy();
-		unlink("../session.json");
+		unlink("json/session.json");
 		header("location:http://localhost:8000/");	
 	}
 }
-
-$close_session = new \Controllers\Logout();
-$close_session->sign_out();

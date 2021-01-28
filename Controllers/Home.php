@@ -4,7 +4,10 @@ namespace Controllers;
 session_start();
 
 final class Home{
-	
+
+	const LIMIT_Q = 60;
+	const LIMIT_A = 30;
+
 	public function index(){
 		self::_session_control();
 		self::_captured_questions();
@@ -24,6 +27,7 @@ final class Home{
 
 	private static function _captured_questions(){
 		if($_SERVER["REQUEST_METHOD"] === "POST" & isset($_POST["submit"])){
+			
 			$question_one = $_POST["question-one"];
 			$question_two = $_POST["question-two"];
 			$question_three = $_POST["question-three"];
@@ -34,6 +38,96 @@ final class Home{
 			$question_eight = $_POST["question-eight"];
 			$question_nine = $_POST["question-nine"];
 			$question_ten = $_POST["question-ten"];
+			$answer_one_a = $_POST["answer-one-a"];
+			$answer_one_b = $_POST["answer-one-b"];
+			$answer_one_c = $_POST["answer-one-c"];	
+			$answer_two_a = $_POST["answer-two-a"];
+			$answer_two_b = $_POST["answer-two-b"];
+			$answer_two_c = $_POST["answer-two-c"];
+			$answer_three_a = $_POST["answer-three-a"];
+			$answer_three_b = $_POST["answer-three-b"];
+			$answer_three_c = $_POST["answer-three-c"];
+			$answer_four_a = $_POST["answer-four-a"];
+			$answer_four_b = $_POST["answer-four-b"];
+			$answer_four_c = $_POST["answer-four-c"];
+			$answer_five_a = $_POST["answer-five-a"];
+			$answer_five_b = $_POST["answer-five-b"];
+			$answer_five_c = $_POST["answer-five-c"];
+			$answer_six_a = $_POST["answer-six-a"];
+			$answer_six_b = $_POST["answer-six-b"];
+			$answer_six_c = $_POST["answer-six-c"];
+			$answer_seven_a = $_POST["answer-seven-a"];
+			$answer_seven_b = $_POST["answer-seven-b"];
+			$answer_seven_c = $_POST["answer-seven-c"];
+			$answer_eight_a = $_POST["answer-eight-a"];
+			$answer_eight_b = $_POST["answer-eight-b"];
+			$answer_eight_c = $_POST["answer-eight-c"];
+			$answer_nine_a = $_POST["answer-nine-a"];
+			$answer_nine_b = $_POST["answer-nine-b"];
+			$answer_nine_c = $_POST["answer-nine-c"];
+			$answer_ten_a = $_POST["answer-ten-a"];
+			$answer_ten_b = $_POST["answer-ten-b"];
+			$answer_ten_c = $_POST["answer-ten-c"];
+
+			if(
+				empty($question_one) || empty($answer_one_a)
+			){
+				\Controllers\Tools::_question_required();
+			}else{
+				$q = 0;
+
+				$verify_question = [
+					strlen($question_one),strlen($question_two),
+					strlen($question_three),strlen($question_four),
+					strlen($question_five),strlen($question_six),
+					strlen($question_seven),strlen($question_eight),
+					strlen($question_nine),strlen($question_ten)
+				];
+
+				while($q <= 11){
+				
+					if($verify_question[$q] > self::LIMIT_Q){
+						\Controllers\Tools::_question_error();
+						break;	
+					}else{
+						
+					}
+
+					$q++;
+				}
+
+				$a = 0;
+
+				$verify_answer = [
+					strlen($answer_one_a),strlen($answer_one_b),
+					strlen($answer_one_c),strlen($answer_two_a),
+					strlen($answer_two_b),strlen($answer_two_c),
+					strlen($answer_three_a),strlen($answer_three_b),
+					strlen($answer_three_c),strlen($answer_four_a),
+					strlen($answer_four_b),strlen($answer_four_c),
+					strlen($answer_five_a),strlen($answer_five_b),
+					strlen($answer_five_c),strlen($answer_six_a),
+					strlen($answer_six_b),strlen($answer_six_c),
+					strlen($answer_seven_a),strlen($answer_seven_b),
+					strlen($answer_seven_c),strlen($answer_eight_a),
+					strlen($answer_eight_b),strlen($answer_eight_c),
+					strlen($answer_nine_a),strlen($answer_nine_b),
+					strlen($answer_nine_c),strlen($answer_ten_a),
+					strlen($answer_ten_b),strlen($answer_ten_c)
+				];
+
+				while($a <= 31){
+				
+					if($verify_answer[$a] > self::LIMIT_A){
+						\Controllers\Tools::_question_error();
+						break;
+					}else{
+						
+					}
+					
+					$a++;
+				}
+			}
 		}	
 	}
 }

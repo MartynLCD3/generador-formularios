@@ -31,6 +31,7 @@ final class Router{
 		
 		$home = "/";
 		$sign_in = "/v1/login";
+		$sign_out = "/v1/logout";
 		
 		route($home,function(){
 			$location = new \Controllers\Home();
@@ -42,11 +43,17 @@ final class Router{
 			$location->index();
 		});
 
+		route($sign_out,function(){
+			$location = new \Controllers\Logout();
+			$location->sign_out();
+		});
+
 		$action = $_SERVER["REQUEST_URI"];
 		
 		if(
 			$action !== $home
 			&& $action !== $sign_in
+			&& $action !== $sign_out
 		){
 			include "Views/error/404.html";
 		}
