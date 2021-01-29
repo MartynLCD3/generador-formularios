@@ -75,6 +75,7 @@ final class Home{
 				\Controllers\Tools::_question_required();
 			}else{
 				$q = 0;
+				$a = 0;
 
 				$verify_question = [
 					strlen($question_one),strlen($question_two),
@@ -83,20 +84,6 @@ final class Home{
 					strlen($question_seven),strlen($question_eight),
 					strlen($question_nine),strlen($question_ten)
 				];
-
-				while($q <= 11){
-				
-					if($verify_question[$q] > self::LIMIT_Q){
-						\Controllers\Tools::_question_error();
-						break;	
-					}else{
-						
-					}
-
-					$q++;
-				}
-
-				$a = 0;
 
 				$verify_answer = [
 					strlen($answer_one_a),strlen($answer_one_b),
@@ -116,15 +103,19 @@ final class Home{
 					strlen($answer_ten_b),strlen($answer_ten_c)
 				];
 
-				while($a <= 31){
+				while($q <= 11 || $a <= 31){
 				
-					if($verify_answer[$a] > self::LIMIT_A){
+					if(
+						$verify_question[$q] > self::LIMIT_Q 
+						|| $verify_answer[$a] > self::LIMIT_A
+					){
 						\Controllers\Tools::_question_error();
-						break;
+						break;	
 					}else{
-						
+						#Model	
 					}
-					
+
+					$q++;
 					$a++;
 				}
 			}

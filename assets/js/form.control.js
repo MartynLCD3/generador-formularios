@@ -17,7 +17,7 @@ new Vue({
 			margin:"10em auto 4em",
 			width:"90%",
 			padding:"3em",
-			backgroundColor:"rgba(255,255,255,.6)",
+			backgroundColor:"rgba(255,255,255,.7)",
 			borderRadius:"2em",
 			textAlign:"center",	
 		},
