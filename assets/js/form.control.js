@@ -29,14 +29,14 @@ new Vue({
 		        v => (v && v.length <= 60) || 'Superaste el límite',
 		],
 		limitRules: [
-			v => (v.length <= 60) || 'Superaste el límite',
+			v => (v && v.length <= 60) || 'Completa correctamente este campo.',
 		],
 		answerRules: [
 			v => !!v || 'Formula mínimo 2 respuestas.',
 			v => (v && v.length <= 30) || 'Superaste el límite',
 		],
 		allRules: [
-			v => (v.length <= 30) || 'Superaste el límite',
+			v => (v && v.length <= 30) || 'Completa correctamente este campo.',
 		],
 	},
 	methods:{

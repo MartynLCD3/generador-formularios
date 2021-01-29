@@ -23,7 +23,8 @@ final class Start_Session{
 						"user_password" => $result["password"]
 					];	
 					
-					header("location:http://localhost:8000/");	
+					$redirect = new \Config\Helper();
+					$redirect->home();	
 				}else{
 					\Controllers\Tools::_user_log_error();
 					return false;

@@ -48,8 +48,13 @@ final class Tools{
 		require_once "./Views/error/question_error.html";
 	}
 
-	public static function _loader(){
+	public static function _form_loaded(){
 		require_once "./Views/src/header.html";
-		require_once "./Views/loader/transition.html";
+		require_once "./Views/success/form_loaded.html";
+	}
+
+	public static function _form_error(){
+		require_once "./Views/src/header.html";
+		require_once "./Views/error/form_error.html";
 	}
 }

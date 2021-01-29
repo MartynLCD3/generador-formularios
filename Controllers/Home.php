@@ -117,9 +117,14 @@ final class Home{
 					$a++;
 				}
 
-				#model
-				#view
-				\Controllers\Tools::_loader();
+				$query_model = new \Models\Queries();
+				$query_model->insert_queries(
+					$query_one,$query_two,
+					$query_three,$query_four,
+					$query_five,$query_six,
+					$query_seven,$query_eight,
+					$query_nine,$query_ten	
+				);	
 			}
 		}	
 	}
