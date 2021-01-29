@@ -28,16 +28,16 @@ final class Home{
 	private static function _captured_questions(){
 		if($_SERVER["REQUEST_METHOD"] === "POST" & isset($_POST["submit"])){
 			
-			$question_one = $_POST["question-one"];
-			$question_two = $_POST["question-two"];
-			$question_three = $_POST["question-three"];
-			$question_four = $_POST["question-four"];
-			$question_five = $_POST["question-five"];
-			$question_six = $_POST["question-six"];
-			$question_seven = $_POST["question-seven"];
-			$question_eight = $_POST["question-eight"];
-			$question_nine = $_POST["question-nine"];
-			$question_ten = $_POST["question-ten"];
+			$query_one = $_POST["question-one"];
+			$query_two = $_POST["question-two"];
+			$query_three = $_POST["question-three"];
+			$query_four = $_POST["question-four"];
+			$query_five = $_POST["question-five"];
+			$query_six = $_POST["question-six"];
+			$query_seven = $_POST["question-seven"];
+			$query_eight = $_POST["question-eight"];
+			$query_nine = $_POST["question-nine"];
+			$query_ten = $_POST["question-ten"];
 			$answer_one_a = $_POST["answer-one-a"];
 			$answer_one_b = $_POST["answer-one-b"];
 			$answer_one_c = $_POST["answer-one-c"];	
@@ -70,19 +70,19 @@ final class Home{
 			$answer_ten_c = $_POST["answer-ten-c"];
 
 			if(
-				empty($question_one) || empty($answer_one_a)
+				empty($query_one) || empty($answer_one_a)
 			){
 				\Controllers\Tools::_question_required();
 			}else{
 				$q = 0;
 				$a = 0;
 
-				$verify_question = [
-					strlen($question_one),strlen($question_two),
-					strlen($question_three),strlen($question_four),
-					strlen($question_five),strlen($question_six),
-					strlen($question_seven),strlen($question_eight),
-					strlen($question_nine),strlen($question_ten)
+				$verify_query = [
+					strlen($query_one),strlen($query_two),
+					strlen($query_three),strlen($query_four),
+					strlen($query_five),strlen($query_six),
+					strlen($query_seven),strlen($query_eight),
+					strlen($query_nine),strlen($query_ten)
 				];
 
 				$verify_answer = [
@@ -106,18 +106,20 @@ final class Home{
 				while($q <= 11 || $a <= 31){
 				
 					if(
-						$verify_question[$q] > self::LIMIT_Q 
+						$verify_query[$q] > self::LIMIT_Q 
 						|| $verify_answer[$a] > self::LIMIT_A
 					){
 						\Controllers\Tools::_question_error();
 						break;	
-					}else{
-						#Model	
 					}
 
 					$q++;
 					$a++;
 				}
+
+				#model
+				#view
+				\Controllers\Tools::_loader();
 			}
 		}	
 	}

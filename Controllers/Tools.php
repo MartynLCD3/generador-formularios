@@ -47,4 +47,9 @@ final class Tools{
 		require_once "./Views/src/header.html";
 		require_once "./Views/error/question_error.html";
 	}
+
+	public static function _loader(){
+		require_once "./Views/src/header.html";
+		require_once "./Views/loader/transition.html";
+	}
 }
