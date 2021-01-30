@@ -9,12 +9,23 @@
           	></v-progress-linear>
 	</v-app>
 </div>
-
+<p id="hola">hola</p>
 <script src="../assets/js/transition.js"></script>
 <style>
 	#app{
 		position:absolute;
-		z-index:-1;
+		z-index:9999;	
 		width:100%;
 	}
+
+	#hola{
+		display:none;
+	}
 </style>
+<script>
+	setTimeout(function(){
+		document.getElementById("app").style.display = "none"
+		document.getElementById("hola").style.display = "block"
+
+	},3000)
+</script>

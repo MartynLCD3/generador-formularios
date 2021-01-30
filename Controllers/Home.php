@@ -124,6 +124,19 @@ final class Home{
 					$query_five,$query_six,
 					$query_seven,$query_eight,
 					$query_nine,$query_ten	
+				);
+				$answer_model = new \Models\Answers();
+				$answer_model->insert_answers(
+					$answer_one_a,$answer_one_b,$answer_one_c,
+					$answer_two_a,$answer_two_b,$answer_two_c,
+					$answer_three_a,$answer_three_b,$answer_three_c,
+					$answer_four_a,$answer_four_b,$answer_four_c,
+					$answer_five_a,$answer_five_b,$answer_five_b,
+					$answer_six_a,$answer_six_b,$answer_six_c,
+					$answer_seven_a,$answer_seven_b,$answer_seven_c,
+					$answer_eight_a,$answer_eight_b,$answer_eight_c,
+					$answer_nine_a,$answer_nine_b,$answer_nine_c,
+					$answer_ten_a,$answer_ten_b,$answer_ten_c	
 				);	
 			}
 		}	
