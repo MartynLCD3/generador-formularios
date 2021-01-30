@@ -117,7 +117,7 @@ final class Home{
 					$a++;
 				}
 
-				$query_model = new \Models\Queries();
+				$query_model = new \Models\Insert_Queries();
 				$query_model->insert_queries(
 					$query_one,$query_two,
 					$query_three,$query_four,
@@ -125,7 +125,7 @@ final class Home{
 					$query_seven,$query_eight,
 					$query_nine,$query_ten	
 				);
-				$answer_model = new \Models\Answers();
+				$answer_model = new \Models\Insert_Answers();
 				$answer_model->insert_answers(
 					$answer_one_a,$answer_one_b,$answer_one_c,
 					$answer_two_a,$answer_two_b,$answer_two_c,

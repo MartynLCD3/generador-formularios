@@ -81,7 +81,7 @@ final class Answers{
 			$stmt->bindValue(":answer_ten_b",$answer_ten_b);
 			$stmt->bindValue(":answer_ten_c",$answer_ten_c);
 			$stmt->execute();	
-	
+				
 			return true;
 	
 		}catch(\PDOException $e){
