@@ -2,7 +2,7 @@
 
 namespace Models;
 
-final class Queries{
+final class Insert_Queries{
 
 	public function insert_queries( $query_one,$query_two,$query_three,$query_four,
 					$query_five,$query_six,$query_seven,$query_eight,
@@ -34,8 +34,9 @@ final class Queries{
 			$stmt->bindValue(":query_nine",$query_nine);
 			$stmt->bindValue(":query_ten",$query_ten);	
 			$stmt->execute();
-
-			\Controllers\Tools::_form_loaded();
+			
+			$redirection = new \Config\Helper();
+			$redirection->form_loader();
 			return true;
 
 		}catch(\PDOException $e){

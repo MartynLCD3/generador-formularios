@@ -11,4 +11,8 @@ final class Logout{
 		unlink("json/session.json");
 		header("location:http://localhost:8000/");	
 	}
+
+	public function destroy_tables(){
+		
+	}
 }

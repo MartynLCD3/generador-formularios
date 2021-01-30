@@ -15,4 +15,9 @@ final class Helper{
 		$helper = self::HOST;
 		header("location:$helper");
 	}
+
+	public function form_loader(){
+		$helper = self::HOST . "loading_please_wait";
+		header("location:$helper");
+	}
 }

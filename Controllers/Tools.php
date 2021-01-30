@@ -52,9 +52,4 @@ final class Tools{
 		require_once "./Views/src/header.html";
 		require_once "./Views/success/form_loaded.html";
 	}
-
-	public static function _form_error(){
-		require_once "./Views/src/header.html";
-		require_once "./Views/error/form_error.html";
-	}
 }

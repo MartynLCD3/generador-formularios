@@ -2,7 +2,7 @@
 
 namespace Models;
 
-final class Answers{
+final class Insert_Answers{
 
 	public function insert_answers(
 				$answer_one_a,$answer_one_b,$answer_one_c,
