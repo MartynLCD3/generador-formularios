@@ -17,7 +17,7 @@ final class Helper{
 	}
 
 	public function form_loader(){
-		$helper = self::HOST . "loading_please_wait";
+		$helper = self::HOST . "v1/visualizer";
 		header("location:$helper");
 	}
 }

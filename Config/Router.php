@@ -32,7 +32,7 @@ final class Router{
 		$home = "/";
 		$sign_in = "/v1/login";
 		$sign_out = "/v1/logout";
-		$loader = "/loading_please_wait";
+		$loader = "/v1/visualizer";
 		
 		route($home,function(){
 			$location = new \Controllers\Home();

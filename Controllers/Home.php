@@ -10,6 +10,7 @@ final class Home{
 
 	public function index(){
 		self::_session_control();
+		self::_data_control();
 		self::_captured_questions();
 		self::_views();
 	}
@@ -23,6 +24,11 @@ final class Home{
 		require_once "./Views/src/header.html";	
 		require_once "./Views/home/dashboard.html";
 		require_once "./Views/src/footer.html";
+	}
+
+	private static function _data_control(){
+		$control = new \Models\Check_Base();
+		$control->verify_full();
 	}
 
 	private static function _captured_questions(){
