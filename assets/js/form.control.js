@@ -42,7 +42,7 @@ new Vue({
 	methods:{
 		logOut() {
 			const url = "http://localhost:8000/"
-			window.location.href = url + "v1/logout"	
+			window.location.href = url + "v1/logout"
 		},
 		validate() {
         		this.$refs.form.validate()
