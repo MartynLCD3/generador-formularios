@@ -35,16 +35,13 @@ final class Loader{
 		$format = "[" . json_encode($queries_array,JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT) . "]";
 		$fp = fopen("json/questions.json","w");
 		fwrite($fp,$format);
-		fclose($fp);
+		echo $format;
 	}
 
 	private static function _get_answers(){
 		$answers = new \Models\Get_Answers();
 		$answers_array = $answers->get_all();
 		$format = "[" . json_encode($answers_array,JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT) . "]";
-		$fp = fopen("json/answers.json","w");
-		fwrite($fp,$format);
-		fclose($fp);
-
+		echo $format;		
 	}
 }

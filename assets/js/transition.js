@@ -1,3 +1,15 @@
+function init(){	
+
+	const visualizer = document.getElementById("visualizer")
+	const app = document.getElementById("app")
+
+	setTimeout(function(){
+		app.style.display = "none"
+		visualizer.style.display = "block"
+
+	},3000)
+}
+
 new Vue({
 	el:"#app",
 	vuetify:new Vuetify(),
@@ -9,3 +21,5 @@ new Vue({
 		},	
 	},
 })
+
+window.addEventListener("load",init,false)

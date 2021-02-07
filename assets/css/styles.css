@@ -18,3 +18,7 @@ body::-webkit-scrollbar-track{
 body::-webkit-scrollbar-thumb{
 	background:#fff;
 }
+
+#visualizer{
+	display:none;
+}
