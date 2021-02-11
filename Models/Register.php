@@ -2,7 +2,7 @@
 
 namespace Models;
 
-final class Register{	
+class Register{	
 
 	public function new_user($username,$email,$password){
 

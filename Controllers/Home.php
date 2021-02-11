@@ -1,7 +1,6 @@
 <?php
 
 namespace Controllers;
-session_start();
 
 final class Home{
 

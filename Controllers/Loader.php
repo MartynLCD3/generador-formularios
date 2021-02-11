@@ -1,9 +1,8 @@
 <?php
 
 namespace Controllers;
-session_start();
-	
-final class Loader{
+
+class Loader{
 
 	public function run(){
 		self::_session_control();
@@ -33,7 +32,7 @@ final class Loader{
 		$queries = new \Models\Get_Queries();
 		$queries_array = $queries->get_all();
 		$format = "[" . json_encode($queries_array,JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT) . "]";
-		$fp = fopen("json/questions.json","w");
+		$fp = fopen("json/questions.json","a");
 		fwrite($fp,$format);
 		echo $format;
 	}
@@ -42,6 +41,8 @@ final class Loader{
 		$answers = new \Models\Get_Answers();
 		$answers_array = $answers->get_all();
 		$format = "[" . json_encode($answers_array,JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT) . "]";
+		$fp = fopen("json/answers.json","a");
+		fwrite($fp,$format);
 		echo $format;		
 	}
 }

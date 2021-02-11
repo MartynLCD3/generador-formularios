@@ -2,7 +2,7 @@
 
 namespace Models;
 
-final class Get_Queries{
+class Get_Queries{
 	
 	public function get_all(){
 

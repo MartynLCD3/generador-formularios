@@ -17,6 +17,8 @@ final class Start_Session{
 		if(is_array($result) || is_object($result)){
 
 				if(password_verify($password,$result["password"])){	
+					
+					session_start();	
 					$_SESSION["user_session"] = [
 						"user_name" => $result["username"],
 						"user_email" => $result["email"], 

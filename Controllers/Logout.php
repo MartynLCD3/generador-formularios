@@ -5,7 +5,6 @@ namespace Controllers;
 final class Logout{
 	
 	public function sign_out(){
-		session_start();
 		session_unset();
 		session_destroy();
 		unlink("json/session.json");

@@ -2,7 +2,7 @@
 
 namespace Models;
 
-final class Connection{
+class Connection{
 
 	private $db_user = "root";
 	private	$db_pass = "";

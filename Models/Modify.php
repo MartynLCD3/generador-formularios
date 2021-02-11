@@ -2,7 +2,7 @@
 
 namespace Models;
 
-final class Modify{
+class Modify{
 
 
 	public function change_password($email,$password){

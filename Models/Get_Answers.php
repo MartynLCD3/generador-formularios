@@ -2,7 +2,7 @@
 
 namespace Models;
 
-final class Get_Answers{
+class Get_Answers{
 
 	public function get_all(){
 

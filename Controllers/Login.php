@@ -2,7 +2,7 @@
 
 namespace Controllers;
 
-final class Login{
+class Login{
 
 	const LIMIT = 0;	
 
